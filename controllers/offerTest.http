@@ -1,0 +1,28 @@
+# update here as neccessary
+@db_port = 3000
+
+###
+POST http://localhost:{{db_port}}/api/offers HTTP/1.1
+Content-Type: application/json
+
+{
+    "userName": "testname",
+    "offerDate": "2021-05-08",
+    "personalProject": 1,
+    "returnship": 1,
+    "timeInProgram": 0.9,
+    "salary": 50000,
+    "gpa": 3.89,
+    "swePosition": 1,
+    "bigTechOffer": 0,
+    "ageOfCandidate": 44,
+    "idOfferSource": 2,
+    "idOfficeLocation": null,
+    "idWorkArrangement": 1,
+    "idPriorExperience": 1,
+    "idPreviousDegree": 1
+}
+
+###
+
+GET http://localhost:{{db_port}}/api/offers

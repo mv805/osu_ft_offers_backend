@@ -1,0 +1,20 @@
+# update here as neccessary
+@db_port = 3000
+###
+
+GET http://localhost:{{db_port}}/api/office-locations/
+
+###
+# by good id
+GET http://localhost:{{db_port}}/api/office-locations/id/1
+
+###
+#by bad id
+GET http://localhost:{{db_port}}/api/office-locations/id/99999
+
+###
+#by a good full name and a bad one
+
+GET http://localhost:{{db_port}}/api/office-locations/full-name/alabama
+###
+GET http://localhost:{{db_port}}/api/office-locations/full-name/sfdfsdsfds

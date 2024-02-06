@@ -1,0 +1,20 @@
+# update here as neccessary
+@db_port = 3000
+###
+
+GET http://localhost:{{db_port}}/api/previous-experiences/
+
+###
+# by good id
+GET http://localhost:{{db_port}}/api/previous-experiences/id/1
+
+###
+#by bad id
+GET http://localhost:{{db_port}}/api/previous-experiences/id/99999
+
+###
+#by a good full name and a bad one
+
+GET http://localhost:{{db_port}}/api/previous-experiences/experience-type/internship
+###
+GET http://localhost:{{db_port}}/api/previous-experiences/experience-type/dfsdfsdfsdsdsffs
