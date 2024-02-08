@@ -57,6 +57,18 @@ router.get("/shortcode/:shortcode", async (req, res) => {
   }
 });
 
+router.get("/full-name/all", async (req, res) => {
+  try {
+    const officeLocations = await OfficeLocation.getAllFullNames();
+    res.json(officeLocations);
+  } catch (err) {
+    console.error(err);
+    res
+      .status(500)
+      .send("An error occured while retrieving all the location full names.");
+  }
+});
+
 router.get("/full-name/:fullName", async (req, res) => {
   const fullName = req.params.fullName;
 
@@ -77,5 +89,7 @@ router.get("/full-name/:fullName", async (req, res) => {
       .send("An error occurred while retrieving the office location.");
   }
 });
+
+
 
 export default router;

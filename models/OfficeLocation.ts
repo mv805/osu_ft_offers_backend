@@ -6,6 +6,18 @@ class OfficeLocation {
     return allLocations[0];
   }
 
+  /**
+   * Retrieves all office locations' full names from the database. Order Alphabetically Descending
+   * 
+   * @returns A promise that resolves to an array of office locations' full names.
+   */
+  static async getAllFullNames(): Promise<any> {
+    const allLocations = await db.query(`
+    SELECT fullName FROM OfficeLocations
+    ORDER BY fullName;`);
+    return allLocations[0];
+  }
+
   static async getByID(id: number): Promise<any> {
     const locationById = await db.query(
       `

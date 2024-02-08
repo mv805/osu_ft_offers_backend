@@ -1,5 +1,5 @@
 # update here as neccessary
-@db_port = 3000
+@db_port = 3030
 ###
 
 GET http://localhost:{{db_port}}/api/office-locations/
@@ -18,3 +18,6 @@ GET http://localhost:{{db_port}}/api/office-locations/id/99999
 GET http://localhost:{{db_port}}/api/office-locations/full-name/alabama
 ###
 GET http://localhost:{{db_port}}/api/office-locations/full-name/sfdfsdsfds
+
+###
+GET http://localhost:{{db_port}}/api/office-locations/full-name/all
