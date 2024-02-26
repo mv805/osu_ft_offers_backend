@@ -1,6 +1,6 @@
 import db from "../db";
 
-class WorkArrangements {
+class WorkArrangement {
   static async getAll(): Promise<any> {
     const allWorkArrangements = await db.query(
       "SELECT * FROM WorkArrangements ORDER BY arrangement;"
@@ -9,4 +9,4 @@ class WorkArrangements {
   }
 }
 
-export default WorkArrangements;
+export default WorkArrangement;

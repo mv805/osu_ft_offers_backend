@@ -1,0 +1,23 @@
+@db_port = 3030
+###
+
+GET http://localhost:{{db_port}}/api/previous-degrees/
+
+###
+# by good id
+GET http://localhost:{{db_port}}/api/previous-degrees/id/1
+
+###
+#by bad id
+GET http://localhost:{{db_port}}/api/previous-degrees/id/99999
+
+###
+#by a good degree type
+
+GET http://localhost:{{db_port}}/api/previous-degrees/degree-type/STEM
+###
+GET http://localhost:{{db_port}}/api/previous-degrees/degree-type/non-STEM
+###
+#by a bad degree type
+GET http://localhost:{{db_port}}/api/previous-degrees/degree-type/sfdfsdsfds
+

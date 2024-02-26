@@ -5,6 +5,7 @@ import previousExperienceController from "../controllers/previousExperienceContr
 import offerController from "../controllers/offerController";
 import offerSourceController from "../controllers/offerSourceController";
 import workArrangementsController from "../controllers/workArrangementsController";
+import previousDegreeController from "../controllers/previousDegreeController";
 
 const router = express.Router();
 
@@ -15,5 +16,6 @@ router.use("/previous-experiences", previousExperienceController);
 router.use("/offers", offerController);
 router.use("/offer-sources/", offerSourceController);
 router.use("/work-arrangements/", workArrangementsController);
+router.use("/previous-degrees/", previousDegreeController);
 
 export default router;

@@ -1,11 +1,11 @@
 import express from "express";
-import WorkArrangements from "../models/WorkArrangements";
+import WorkArrangement from "../models/WorkArrangement";
 
 const router = express.Router();
 
 router.get("/", async (req, res) => {
   try {
-    const allWorkArrangements = await WorkArrangements.getAll();
+    const allWorkArrangements = await WorkArrangement.getAll();
     res.json(allWorkArrangements);
   } catch (err) {
     console.error(err);

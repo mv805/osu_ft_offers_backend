@@ -71,18 +71,29 @@ class Offer {
       "idPreviousDegree",
     ];
 
+    //given values from the caller are put into an array.
     let valuesArray = Object.values(offerData);
+    //if there is a given value for each of the fields, then a placeholder is needed "?", if there is no value given by the caller, then just DEFAULT values are needed. This is done and added to the placeholder array.
     let valuePlaceholders = fields
       .map((field, index) => (valuesArray[index] !== null ? "?" : "DEFAULT"))
       .join(", ");
+    //another parameters array is created for each of the values given by the caller
     let valuesParameters = valuesArray.filter((value) => value !== null);
 
+    //the sql is setup with the steps above, preparing the values and their placeholders
     const sql = `
     INSERT INTO Offers (${fields.join(", ")}) 
     VALUES (${valuePlaceholders})
   `;
 
-    await db.query(sql, valuesParameters);
+    const result = await db.query(sql, valuesParameters);
+
+    //return the pk id if its succesfully inserted.
+    if (result[0] && "insertId" in result[0]) {
+      return result[0].insertId;
+    } else {
+      throw new Error("Failed to insert the offer.");
+    }
   }
 }
 

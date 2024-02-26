@@ -20,11 +20,14 @@ router.post("/", async (req, res) => {
 
   try {
     const offerData = req.body;
-    const newOffer = await Offer.create(offerData);
-    res.json(newOffer);
+    const newOfferId = await Offer.create(offerData);
+
+    res.json({ newOfferId: newOfferId });
   } catch (err) {
     console.error(err);
-    res.status(500).send("An error occurred while creating the offer.");
+    const errorMessage =
+      err instanceof Error ? err.message : "An unexpected error occurred";
+    res.status(500).send(errorMessage);
   }
 });
 

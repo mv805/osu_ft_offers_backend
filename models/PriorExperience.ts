@@ -2,7 +2,7 @@ import db from "../db";
 
 class PriorExperience {
   static async getAll(): Promise<any> {
-    const allExperiences = await db.query("SELECT * FROM PriorExperiences");
+    const allExperiences = await db.query("SELECT * FROM PriorExperiences ORDER BY experienceType");
     return allExperiences[0];
   }
 

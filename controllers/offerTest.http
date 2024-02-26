@@ -5,7 +5,7 @@ POST http://localhost:{{db_port}}/api/offers HTTP/1.1
 Content-Type: application/json
 
 {
-    "userName": "testname",
+    "userName": "222",
     "offerDate": "2021-05-08",
     "personalProject": 1,
     "returnship": 1,

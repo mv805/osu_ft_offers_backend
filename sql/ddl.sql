@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS `osu_ft_offers`.`PreviousDegrees` (
 DROP TABLE IF EXISTS `osu_ft_offers`.`Offers`;
 CREATE TABLE IF NOT EXISTS `osu_ft_offers`.`Offers` (
     `idOffer` INT NOT NULL AUTO_INCREMENT,
-    `userName` VARCHAR(45) NOT NULL UNIQUE,
+    `userName` VARCHAR(45) NOT NULL,
     `offerDate` DATE NOT NULL,
     `personalProject` TINYINT NOT NULL DEFAULT 0,
     `returnship` TINYINT NOT NULL DEFAULT 0,
