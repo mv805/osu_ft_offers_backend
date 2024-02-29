@@ -22,6 +22,68 @@ Content-Type: application/json
     "idPreviousDegree": 1
 }
 
-###
 
+#
+# Offers
+#
+###
 GET http://localhost:{{db_port}}/api/offers
+
+#
+# Salaries
+#
+
+###
+# all the salaries
+GET http://localhost:{{db_port}}/api/offers/salaries
+
+###
+#salaries less than a given max
+GET http://localhost:{{db_port}}/api/offers/salaries?max=100000
+
+###
+#all salaries from a given state
+GET http://localhost:{{db_port}}/api/offers/salaries/state/CA
+
+###
+#salaries less than a given max in a given state
+GET http://localhost:{{db_port}}/api/offers/salaries/state/CA?max=150000
+
+###
+#salaries less than a given max in a given state
+GET http://localhost:{{db_port}}/api/offers/salaries/state/IA?max=150000
+
+###
+#bad max query
+GET http://localhost:{{db_port}}/api/offers/salaries/state/CA?max=sdfsdfs
+
+###
+#bad max query
+GET http://localhost:{{db_port}}/api/offers/salaries?max=sdsdfs
+
+#
+# Salary Averages
+#
+
+###
+#get average of all salaries from a certain state
+GET http://localhost:{{db_port}}/api/offers/salaries/average?state=CA
+
+###
+#get average of all salaries from a certain state and max
+GET http://localhost:{{db_port}}/api/offers/salaries/average?state=CA&max=150000
+
+###
+#get average of all salaries and max
+GET http://localhost:{{db_port}}/api/offers/salaries/average?max=150000
+
+###
+#get average of all salaries 
+GET http://localhost:{{db_port}}/api/offers/salaries/average
+
+###
+#
+# Salaries by grouping
+#
+
+GET http://localhost:{{db_port}}/api/offers/salaries/groups
